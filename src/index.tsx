@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import Test from './component/testcomp';
+import Main from './component/main';
 require('../docs/style/style.scss');
 
 ReactDom.render(
-    <Test message={"hello"} />,
+    <Main />,
     document.getElementById('content')
 );
