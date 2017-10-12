@@ -2,4 +2,5 @@ node_modules
 dist
 tsconfig.json
 .DS_Store
-*.js.map
+bundle.js
+bundle.js.map
