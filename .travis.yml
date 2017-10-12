@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+        - "stable"
+sudo: false
+    
+branches:
+    only:
+        - develop
+    except:
+        - master
+os:
+    - linux
+    - osx
+
+install:
+    - npm i
+script: 
+    - npm run build
+    - npm run build-rl
