@@ -1,29 +1,16 @@
 import * as React from 'react';
-import * as MediaQuery from 'react-responsive';
+//import CenterView from './centerview';
+import RokiIcon from './rokiicon';
 
-export default class Main extends React.Component<undefined, undefined> {
-    constructor(props: undefined) {
+export default class Main extends React.Component<{}, {}> {
+    constructor(props: {}) {
         super(props);
     }
-    public render() {
+    public render() : JSX.Element{
         return (
-            <div>
-                <MediaQuery query="(min-device-width:1224px)">
-                    <p>laptop</p>
-                </MediaQuery>
-                <MediaQuery query="(max-width: 1224px)">
-                    <p>tablet</p>
-                </MediaQuery>
-                <MediaQuery query="(orientation: portrait)">
-                    <p>portrait</p>
-                </MediaQuery>
-                <MediaQuery query="(orientation: landscape)">
-                    <p>landscape</p>
-                </MediaQuery>
-                <MediaQuery query="(min-resolution: 2dppx)">
-                    <p>retina</p>
-                </MediaQuery>
-            </div>
-        );
+	//    <CenterView>
+	    	<RokiIcon width={200} height={200} />
+	  //  </CenterView>
+	);
     }
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run make_tsconf && webpack",
-    "watch": "webpack --watch",
+    "watch": "npm run make_tsconf && webpack --watch",
     "build_rl": "npm run make_tsconf && webpack --config ./webpack-release.config.js",
     "make_tsconf": "./devtools/yml2json.rb ./tsconfig.yaml > ./tsconfig.json"
   },
@@ -21,17 +21,22 @@
   },
   "homepage": "https://falgon.github.io/rokigp",
   "devDependencies": {
-    "@types/react-responsive": "^1.1.8",
+    "@types/material-ui": "^0.18.3",
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
+    "file-loader": "^1.1.5",
+    "material-ui": "^0.19.4",
     "node-sass": "^4.5.3",
-    "react-responsive": "^2.0.0",
+    "raw-loader": "^0.5.1",
+    "react-bootstrap": "^0.31.3",
+    "react-tap-event-plugin": "^3.0.2",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.2",
     "style-loader": "^0.19.0",
     "tslint": "^5.7.0",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.5.3",
+    "url-loader": "^0.6.2",
     "webpack": "^3.7.1"
   },
   "dependencies": {
