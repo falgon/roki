@@ -1,4 +1,3 @@
-node_modules
-dist
 tsconfig.json
 .DS_Store
+node_modules
