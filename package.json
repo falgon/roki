@@ -1,0 +1,41 @@
+{
+  "name": "ghpage",
+  "version": "1.0.0",
+  "description": "ghpages source code",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run make_tsconf && webpack",
+    "watch": "webpack --watch",
+    "build_rl": "npm run make_tsconf && webpack --config ./webpack-release.config.js",
+    "make_tsconf": "./devtools/yml2json.rb ./tsconfig.yaml > ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falgon/rokigp.git"
+  },
+  "author": "roki <falgon53@yahoo.co.jp>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falgon/rokigp/issues"
+  },
+  "homepage": "https://falgon.github.io/rokigp",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.3",
+    "css-loader": "^0.28.7",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "source-map-loader": "^0.2.2",
+    "style-loader": "^0.19.0",
+    "tslint": "^5.7.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.5.3",
+    "webpack": "^3.7.1"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.10",
+    "@types/react-dom": "^16.0.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
