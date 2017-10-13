@@ -16,7 +16,7 @@ module.exports = {
             },
             {
                 test: /\.scss?$/,
-		include: __dirname + '/docs/style/',
+                include: __dirname + '/docs/style/',
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
@@ -25,7 +25,7 @@ module.exports = {
                 loader: 'source-map-loader'
             },
             {
-                test: /\.(jpg|jpeg)$/,
+                test: /\.jpe?g$|\.ico$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -36,7 +36,7 @@ module.exports = {
                 }]
             },
             {
-                test: /.html$/,
+                test: /\.html$/,
                 use: 'raw-loader'
             },
             {
@@ -45,31 +45,66 @@ module.exports = {
             },
             {
                 test: /\.woff(\?.+)?$/,
-                use: 'url-loader?limit=10000&mimetype=application/font-woff'
+                use: [{
+                    loader: 'url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]',
+                    options: {
+                        outputPath: '../../assets/',
+                        publicPath: __dirname + '/assets',
+                        emitFile: true
+                    }
+                }]
             },
             {
                 test: /\.woff2(\?.+)?$/,
-                use: 'url-loader?limit=10000&mimetype=application/font-woff'
+                use: [{
+                    loader: 'url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]',
+                    options: {
+                        outputPath: '../../assets/',
+                        publicPath: __dirname + '/assets',
+                        emitFile: true
+                    }
+                }]
             },
             {
                 test: /\.ttf(\?.+)?$/,
-                use: 'file-loader'
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: '../../assets/',
+                        publicPath: __dirname + '/assets',
+                        emitFile: true
+                    }
+                }]
             },
             {
                 test: /\.eot(\?.+)?$/,
-                use: 'file-loader'
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: '../../assets/',
+                        publicPath: __dirname + '/assets',
+                        emitFile: true
+                    }
+                }]
             },
             {
                 test: /\.svg(\?.+)?$/,
-                use: 'file-loader'
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: '../../assets/',
+                        publicPath: __dirname + '/assets',
+                        emitFile: true
+                    }
+                }]
             },
             {
                 test: /\.png$/,
-                use: 'url-loader?mimetype=image/png'
+                use: 'url-loader?mimetype=image/png&name=[path][name].[ext]'
             },
             {
                 test: /\.gif$/,
-                use: 'url-loader?mimetype=image/gif'
+                use: 'url-loader?mimetype=image/gif&name=[path][name].[ext]'
             }
             //    { enforce: 'pre', test: /\.tsx?$/, exclude: /node_modules/, loader:'tslint-loader' } // FIXME: https://github.com/wbuchwalter/tslint-loader/issues/57
         ],

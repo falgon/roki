@@ -1,6 +1,9 @@
 import * as React from 'react';
-//import CenterView from './centerview';
+import Wrapper from './wrapper';
 import RokiIcon from './rokiicon';
+import Ro from './roki/ro';
+import Ki from './roki/ki';
+import '../../assets/favicon.ico';
 
 export default class Main extends React.Component<{}, {}> {
     constructor(props: {}) {
@@ -8,9 +11,11 @@ export default class Main extends React.Component<{}, {}> {
     }
     public render() : JSX.Element{
         return (
-	//    <CenterView>
-	    	<RokiIcon width={200} height={200} />
-	  //  </CenterView>
+	    <div>
+	    	<Wrapper maxWidth={500}>
+	    		<Ro /><RokiIcon width={150} height={150} /><Ki />
+	    	</Wrapper>
+	    </div>
 	);
     }
 }
