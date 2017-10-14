@@ -2,35 +2,71 @@
 
 @font-face {
     font-family: 'Sansation';
-    src: 
-    url('../../assets/fonts/sansation-light-webfont.eot'),
+    src: url('../../assets/fonts/sansation-light-webfont.eot'),
     url('../../assets/fonts/sansation-light-webfont.eot?iefix') format('embedded-opentype'),
     url('../../assets/fonts/sansation-light-webfont.woff') format('woff'),
     url('../../assets/fonts/Sansation-Light.ttf') format('truetype'),
     url('../../assets/fonts/sansation-light-webfont.svg') format('svg');
 }
 
+.fade {
+    @include setPrefix(animation,
+    fadeIn 2s ease 0s 1 normal);
+}
+
 #rokiicon {
     cursor: pointer;
-    &:hover {
-        @include setPrefix('animation', hue 0.5s linear 0s infinite normal);
-        @include setPrefix('animation-play-state', running);
+    @media screen and (max-width: 979px) {
+        &:hover {
+            @include setPrefix('animation',
+            hue 0.5s linear 0s infinite normal);
+            @include setPrefix('animation-play-state',
+            running);
 
-        -webkit-box-reflect: belowa 0.5px -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff));
-        -webkit-box-reflect: below 0.5px linear-gradient(top, #fff, #000);
+            -webkit-box-reflect: belowa 0.5px -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff));
+            -webkit-box-reflect: below 0.5px linear-gradient(top, #fff, #000);
+        }
     }
-    -webkit-box-reflect:below 0.5px -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff));
-    -webkit-box-reflect:below 0.5px linear-gradient(top, #fff, #000);
+    -webkit-box-reflect:below 0.5px -webkit-gradient(linear,
+    left top,
+    left bottom,
+    from(transparent),
+    to(#fff));
+    -webkit-box-reflect:below 0.5px linear-gradient(top,
+    #fff,
+    #000);
 }
 
 .isOpen {
-    @include setPrefix('backface-visibility', hidden);
-    @include setPrefix('animation', live 1.0s linear 0s 1 normal);
+    @include setPrefix('backface-visibility',
+    hidden);
+    @include setPrefix('animation',
+    live 1.0s linear 0s 1 normal);
 }
 
 .isClose {
-    @include setPrefix('backface-visibility', hidden);
-    @include setPrefix('animation', live2 1.0s linear 0s 1 normal);
+    @include setPrefix('backface-visibility',
+    hidden);
+    @include setPrefix('animation',
+    live2 1.0s linear 0s 1 normal);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
 
 @keyframes live2 {
@@ -130,21 +166,50 @@
 }
 
 #ro {
-
+    @include setPrefix(animation,
+    Ro 2s ease 0s 1 normal);
     display: flex;
     justify-content: center;
     align-items: center;
     h1 {
-    	font-family: 'Sansation';
-	text-align: center;
-	font-weight: lighter;
-    	-webkit-font-smoothing: antialiased;
-    	-moz-osx-font-smoothing: grayscale;
-	letter-spacing: 2px;
-	font-size: 5em;
+        font-family: 'Sansation';
+        text-align: center;
+        font-weight: lighter;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 2px;
+        font-size: 5em;
     }
 }
 
 #ki {
+    @include setPrefix(animation,
+    Ki 2s ease 0s 1 normal);
     @extend #ro;
+}
+
+@keyframes Ro {
+    0% {
+        @include opacity(0);
+        @include setPrefix(transform,
+        translateX(-50px));
+    }
+    100% {
+        @include opacity(1);
+        @include setPrefix(transform,
+        translateX(0));
+    }
+}
+
+@keyframes Ki {
+    0% {
+        @include opacity(0);
+        @include setPrefix(transform,
+        translateX(50px));
+    }
+    100% {
+        @include opacity(1);
+        @include setPrefix(transform,
+        translateX(0));
+    }
 }

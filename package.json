@@ -22,6 +22,7 @@
   "homepage": "https://falgon.github.io/rokigp",
   "devDependencies": {
     "@types/material-ui": "^0.18.3",
+    "@types/react-icons": "^2.2.3",
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
@@ -29,6 +30,8 @@
     "node-sass": "^4.5.3",
     "raw-loader": "^0.5.1",
     "react-bootstrap": "^0.31.3",
+    "react-icons": "^2.2.7",
+    "react-radial-menu": "^0.1.0",
     "react-tap-event-plugin": "^3.0.2",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.2",
@@ -40,8 +43,10 @@
     "webpack": "^3.7.1"
   },
   "dependencies": {
+    "@types/jquery": "^3.2.13",
     "@types/react": "^16.0.10",
     "@types/react-dom": "^16.0.1",
+    "jquery": "^3.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }

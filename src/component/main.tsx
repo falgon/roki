@@ -9,11 +9,12 @@ export default class Main extends React.Component<{}, {}> {
     constructor(props: {}) {
         super(props);
     }
+
     public render() : JSX.Element{
         return (
-	    <div>
+	    <div style={{width: '100%', height: '100%'}}>
 	    	<Wrapper maxWidth={500}>
-	    		<Ro /><RokiIcon width={150} height={150} /><Ki />
+	    		<Ro /><RokiIcon width={150} height={150} menuStatus={ false } /><Ki />
 	    	</Wrapper>
 	    </div>
 	);
