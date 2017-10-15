@@ -1,21 +1,9 @@
 import * as React from 'react';
 import { isIE10orOlder } from './detectIE';
-import '../../docs/style/clearfix.scss';
 
-interface WrapperProps {
-    maxWidth: number;
-}
-
-/*interface WrapperState {
-    isOpen?: boolean;
-    isInited?: boolean;
-    windowHeight?: any;
-}*/
-
-export default class Wrapper extends React.Component<WrapperProps, {}> {
-    constructor(props: WrapperProps) {
+export default class Wrapper extends React.Component<{}, {}> {
+    constructor(props: {}) {
 	super(props);
-//	this.state = { isOpen: false, isInited: false, windowHeight: 0 };
     }
 
     public componentDidMount() {
@@ -29,7 +17,7 @@ export default class Wrapper extends React.Component<WrapperProps, {}> {
 
     public render() {
 	return(
-		<div className='clearfix' style={{margin: '0 auto', maxWidth: this.props.maxWidth, width: '100%'}}>{this.props.children}</div>
+		<div className='clearfix' style={{margin: '0 auto', maxWidth: '100%', width: '100%', height: '100%'}}>{this.props.children}</div>
 	);
     }
 

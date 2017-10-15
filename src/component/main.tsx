@@ -13,8 +13,8 @@ export default class Main extends React.Component<{}, {}> {
     public render() : JSX.Element{
         return (
 	    <div style={{width: '100%', height: '100%'}}>
-	    	<Wrapper maxWidth={500}>
-	    		<Ro /><RokiIcon width={150} height={150} menuStatus={ false } /><Ki />
+	    	<Wrapper>
+	    		<Ro /><RokiIcon width={150} height={150} menuStatus={false} /><Ki />
 	    	</Wrapper>
 	    </div>
 	);

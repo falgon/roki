@@ -21,12 +21,10 @@
   },
   "homepage": "https://falgon.github.io/rokigp",
   "devDependencies": {
-    "@types/material-ui": "^0.18.3",
     "@types/react-icons": "^2.2.3",
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
-    "material-ui": "^0.19.4",
     "node-sass": "^4.5.3",
     "raw-loader": "^0.5.1",
     "react-bootstrap": "^0.31.3",

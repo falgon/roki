@@ -1,22 +1,9 @@
 import * as React from 'react';
-import '../../../docs/style/rokiicon.scss';
-import '../../../docs/style/logo.scss';
 import { isIE10orOlder } from '../detectIE';
 
-/*interface RoProps {
-    textAlign: string;
-}*/
-
-/*interface RoState {
-    isOpen?: boolean;
-    isInited?: boolean;
-    windowHeight?: any;
-}*/
-
-export default class Ro extends React.Component<{}/*RoProps*/, {}> {
-    constructor(props: {}/*RoProps*/) {
+export default class Ro extends React.Component<{}, {}> {
+    constructor(props: {}) {
         super(props);
-        //	this.state = { isOpen: false, isInited: false, windowHeight: 0 };
     }
 
     public componentDidMount() {
@@ -30,7 +17,7 @@ export default class Ro extends React.Component<{}/*RoProps*/, {}> {
 
     public render() {
         return (
-            <div style={{ position: 'absolute', top: 0, bottom: 0, right: '180px', left: 0, margin: 'auto', width: '80px' }} id='ro'><h1>Ro</h1></div>
+            <div style={{ zIndenx: 0, position: 'absolute', top: 0, bottom: 0, right: '180px', left: 0, margin: 'auto', width: '80px' }} id='ro'><h1>Ro</h1></div>
         );
     }
 
