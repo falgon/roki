@@ -9,6 +9,18 @@ script {
     display: none;
 }
 
+a {
+    color: #c8c8c8;
+    text-decoration: none;
+    &:visited {
+	color: #c8c8c8;
+    }
+    &:hover {
+        color: white;
+        @include setPrefix(transition, 0.3s ease-in-out);
+    }
+}
+
 .br::before {
     content: '\A';
     white-space: pre;

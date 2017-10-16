@@ -53,7 +53,7 @@ $openButton: rotate(45deg), scale(0.1, 1), rotate(-45deg);
     @media screen and (max-width: 320px) { /* iPhone 5 */
 	@include makeMenuPosition($iPhone5VX, $iPhone5VY);
     }
-    @media screen and (max-height: 414px) { /* iPhone 5 */
+    @media screen and (max-height: 414px) {
 	@include makeMenuPosition($spHX, $spHY);
     }	
 }

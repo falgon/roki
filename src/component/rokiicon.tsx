@@ -76,10 +76,10 @@ export default class RokiIcon extends React.Component<RokiIconProps, RokiIconSta
                         })
                     }
                 </div>
-                <figure>
+                <figure style={{width: '100%', height: '100%'}}>
                     <figcaption
                         id={this.state.page == this.pageStatus.links || this.state.page == this.pageStatus.about || this.state.page == this.pageStatus.contact ? 'captionMain' : 'captionHide'}>
-	    		<TiDeleteOutline style={{ margin: '5px', fontSize: '5em', cursor: 'pointer'}} onClick={ () => {this.setState({page: this.pageStatus.default})} } />
+	    		<TiDeleteOutline id='del' onClick={ () => {this.setState({page: this.pageStatus.default})} } className='Cross' />
                         <InPageContents contents={page} contentsName={this.pageStatus} />
                     </figcaption>
                 </figure>
