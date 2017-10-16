@@ -30,6 +30,11 @@ module.exports = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
+                test: /\.css?$/,
+                include: /node_modules/,
+                loaders: ['style-loader', 'css-loader']
+            },
+            {
                 enforce: 'pre',
                 test: /\.js$/,
                 loader: 'source-map-loader'

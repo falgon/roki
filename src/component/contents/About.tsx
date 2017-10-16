@@ -1,41 +1,82 @@
 import * as React from 'react';
+import Wrapper from '../wrapper';
 import FaBirthdayCake from 'react-icons/lib/fa/birthday-cake';
 import FaMale from 'react-icons/lib/fa/male';
 import GoInfo from 'react-icons/lib/go/info';
 import GoLocation from 'react-icons/lib/go/location';
-
-interface Pair {
-    text: string;
-    icon: JSX.Element;
-}
-
+import GoTag from 'react-icons/lib/go/tag';
+import GoStar from 'react-icons/lib/go/star';
+import Roki from '../../../assets/roki.png';
+import TiCalender from 'react-icons/lib/ti/calender';
+import * as ossList from '../../../docs/oss_contribution.json';
+import * as toolTips from '../../../docs/tool_tips.json';
+    
 export default class About extends React.Component<{}, {}> {
     constructor(props: {}) {
         super(props);
     }
 
     public render(): JSX.Element {
-	const IconsStyle = { marginRight: '5px', fontSize: '2em' };
-	const ListStyle = { display: 'inline-block', marginRight: '8px' };
+        const IconsStyle = { marginRight: '6px', fontSize: '2em' };
+        const ListStyle = { marginBottom: '8px' };
 
-	const ele: Pair[] = [
-	    {text: 'Born in 1995', icon: <FaBirthdayCake style={ IconsStyle }/>}, 
-	    {text: 'Male', icon: <FaMale style={ IconsStyle }/>},
-	    {text: 'Junior in college', icon: <GoInfo style={ IconsStyle }/>},
-	    {text: 'Tokyo, JP', icon: <GoLocation style={ IconsStyle }/>}
-	];
+        const ele: Pair[] = [
+            { text: 'Born in 1995', icon: <FaBirthdayCake style={IconsStyle} /> },
+            { text: 'Male', icon: <FaMale style={IconsStyle} /> },
+            { text: 'Univercity student', icon: <GoInfo style={IconsStyle} /> },
+            { text: 'Tokyo, JP', icon: <GoLocation style={IconsStyle} /> },
+            { text: 'Beer 🍺', icon: <GoStar style={IconsStyle} /> },
+            {
+                text: (
+                    <div className='tooltip'>
+                        Skill / Fav
+		    	<ul className='tooltipText'>
+                            {toolTips.map((t: string) => { return <li>{t}</li>; })}
+                        </ul>
+                    </div>
+                ),
+                icon: <GoTag style={IconsStyle} />
+            },
+        ];
 
+        let indexer: number = 0;
         return (
-            <div>
-                <h2 className='typeString'>About</h2>
-                <section style={{ marginTop: '30px', fontSize: '14px' }}>
-	    	<ul style={{ listStyle:'none', textAlign: 'center'}}>
-	    	{
-		    ele.map((e: Pair) => {
-			return <li style={ ListStyle }>{e.icon}{e.text}</li>;
-		    })
-		}
-	    	</ul>
+            <div id='About'>
+                <h2 className='typeString' style={{ marginBottom: '15px'}}>About</h2>
+                <section>
+                    <Wrapper>
+                        <div id='AboutRoki'>
+                            <img id='AboutRokiImage' src={Roki} style={{float: 'right'}} />
+                        </div>
+                        <ul style={{ listStyle: 'none', textAlign: 'left', marginLeft: '15px' }}>
+                            {
+                                ele.map((e: Pair) => {
+                                    return <li style={ListStyle}>{e.icon}{e.text}</li>;
+                                })
+                            }
+                        </ul>
+                    </Wrapper>
+                    <div id='tablePositioner'>
+                        <h2 className='typeString' style={{ marginBottom: '15px', fontSize: '3em' }}>OSS Contribution</h2>
+                        <div id='tableWrapper'>
+                            <table id='ossContrib'>
+                                <tr><th>#</th><th>Description</th><th>Genre</th><th><TiCalender style={{ fontSize: '1.5em' }} /> Date</th></tr>
+                                {
+                                    ossList.map((o: OSS) => {
+                                        ++indexer;
+                                        return (
+                                            <tr>
+                                                <td>{indexer}</td>
+                                                <td><a href={o.link} id='ossText'>{o.text}</a></td>
+                                                <td><div id='Genre'>{o.genre}</div></td>
+                                                <td><p>{o.date}</p></td>
+                                            </tr>
+                                        );
+                                    })
+                                }
+                            </table>
+                        </div>
+                    </div>
                 </section>
             </div>
         );
