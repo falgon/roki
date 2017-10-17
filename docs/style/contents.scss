@@ -1,0 +1,295 @@
+@import './mixin/generics';
+@import  './clearfix';
+
+#contentsWrapper {
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media screen and (max-height: 699px) {
+    #contentsWrapper {
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    #contentsWrapper {
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+    }
+}
+
+#About {
+    width: 100%;
+    height: 100%;
+    section {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-height:420px) {
+    #About {
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+	section {
+	    font-size: 12px;
+	}
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #About {
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+	section {
+	    font-size: 12px;
+	}
+    }
+}
+
+#AboutRoki {
+    width: 200px;
+    height: 200px;
+    margin: 0 15px 0 15px;
+    float: right;
+}
+
+.Cross {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 420px) {
+    #AboutRoki {
+	width: 170px;
+	height: 170px;
+	margin-right: 20px;
+	float: right;
+	box-sizing: border-box;
+    }
+
+    .Cross {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 5;
+	cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #AboutRoki {
+	width: 130px;
+	height: 130px;
+	margin-right: 15px;
+	float: right;
+	box-sizing: border-box;
+    }
+
+    .Cross {
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+    }
+}
+
+#AboutRokiImage {
+    width: 200px;
+    height: 200px;
+    background-visibility: none;
+    @include setPrefix(filter, grayscale(100%));
+    float: right;
+}
+
+@media screen and (max-height: 420px) {
+    #AboutRokiImage {
+	width: 100%;
+	height: 100%;
+	background-visibility: none;
+	margin: 0 15px 0 15px;
+	@include setPrefix(filter, grayscale(100%));
+	float: right;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #AboutRokiImage {
+	width: 100%;
+	height: 100%;
+	background-visibility: none;
+	margin: 0 15px 0 15px;
+	@include setPrefix(filter, grayscale(100%));
+	float: right;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    li {
+        text-align: left;
+        margin: 0 0 5px 10px;
+        list-style: none;
+    }
+
+    .tooltipText {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #c8c8c8;
+        text-align: center;
+        padding: 10px 0;
+        position: absolute;
+        border-radius: 6px;
+        z-index: 5;
+        margin-top: 15px;
+    }
+    &:hover .tooltipText {
+        width: 170px;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+        visibility: visible;
+    }
+}
+
+#tableWrapper {
+    overflow: scroll;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    max-height: 300px;
+    border: solid #c8c8c8 1px;
+    padding: 10px;
+    background: black;
+}
+
+#ossContrib {
+    overflow: scroll;
+    text-align: left;
+    width: 100%;
+
+    tr,
+    td {
+        overflow: scroll;
+        border-bottom: solid 1px silver;
+        border-collapse: collapse;
+        padding: 0.8em;
+        border-spacing: 20px;
+    }
+}
+
+#Genre {
+    padding: 6px;
+    background: #337AB7;
+    text-align: center;
+    color: white;
+    border-radius: 6px;
+}
+
+#tablePositioner {
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-height: 699px) {
+    #tablePositioner {
+	position: static;
+	margin-top: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	overflow: scroll;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #tablePositioner {
+	position: static;
+	margin-top: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+    }
+}
+
+#Contact {
+    section {
+    	width: 100%;
+	height: 128px;
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+	font-size: 2em;
+    }
+    ul {
+	height: 100%;
+	box-sizing: border-box;
+    }
+}
+
+#Links {
+    @extend #Contact;
+    box-sizing: border-box;
+    margin-left: 5px;
+    margin-right: 10px;
+    section {
+	height: 295px;
+	font-size: 1.5em;
+	box-sizing: border-box;
+	max-width: 700px;
+    }
+    li {
+	margin: 0 5px 0 5px;
+	display: inline-block;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-color: black;
+	border: #8c8c8c solid 1px;
+	position: relative;
+
+	&:hover {
+	    background-color: #0a0a0a;
+	    @include setPrefix(transition, 0.3s ease-in-out);
+	}
+    }
+
+    a {
+	padding: 10px;
+	display: block;
+    }
+}
+
+@media screen and (max-width: 453px) {
+    #Links {
+	section {
+	    position: static;
+	    margin-top: 20px;
+	}
+    }
+}
+
+@media screen and (max-height: 415px) {
+    #Links {
+	section {
+	    position: static;
+	    margin-top: 20px;
+	}
+    }
+}

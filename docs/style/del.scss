@@ -1,0 +1,11 @@
+@import './mixin/generics';
+
+#del {
+    margin: 5px;
+    font-size: 5em;
+    cursor: pointer;
+    &:hover{
+	color: white;
+	@include setPrefix(transition, 0.3s ease-in-out);
+    }
+}

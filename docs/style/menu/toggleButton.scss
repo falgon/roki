@@ -8,44 +8,52 @@
     pointer-events: none;
 }
 
-
 .menu-Opened {
     @include opacity(1);
     background-visibility: none;
 }
 
-$laptopX:  0.008361px,   190.9466px,  190.9466px,  0.008361px, -190.86291px, -191.0306px,  -0.25084px;
+$laptopX: 0.008361px, 190.9466px, 190.9466px, 0.008361px, -190.86291px, -191.0306px, -0.25084px;
 $laptopY: -204.99997px, -152.47586px, 152.47586px, 204.99997px, 152.62064px, -152.33095px, -204.9997px;
 
-.menu-open {
-    display: none;
+$spVX: 0.008361px, 130.9466px, 130.6466px, 0.008361px, -130.9466px, -131.0306px, -0.25084px;
+$spVY: $laptopY;
+$spHX: 200.6466px, 110.6466px, 110.6466px, -200.6466px, -110.6466px, -110.6466px, -0.25084px;
+$spHY: 0, -100px, 100px, 0, 100px, -100px, -50px;
 
-    &:checked+.menu-open-button {
-        -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
-        transform: translate3d(0, 0, 0) rotate(45deg);
-    }
+$iPhone5VX: 0.008361px, 110.9466px, 110.6466px, 0.008361px, -110.9466px, -111.0306px, -0.25084px;
+$iPhone5VY: $laptopY;
 
-    &:checked+.menu-open-button {
-        -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
-        transform: translate3d(0, 0, 0) scale(0.1, 1);
-    }
-
-    &:checked+.menu-open-button {
-        -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-        transform: translate3d(0, 0, 0) rotate(-45deg);
-    }
-
-    &:checked~.menu-item {
-        -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
-        transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
-    }
-
+@mixin makeMenuPosition($x, $y) {
     @for $i from 1 through 7 {
 	&:checked~.menu-item:nth-child(#{$i + 2}) {
 	    @include setPrefix(transition-duration, #{$i * 100 + 80}ms);
-	    @include setPrefix(transform, translate3d(nth($laptopX, $i), nth($laptopY, $i), 0));
+	    @include setPrefix(transform, translate3d(nth($x, $i), nth($y, $i), 0));
+	}
+    }  
+}
+
+$openButton: rotate(45deg), scale(0.1, 1), rotate(-45deg);
+.menu-open {
+    display: none;
+    @for $i from 1 through 3 {
+	&:checked+.menu-open-button {
+	    @include setPrefix(transform, translate3d(0, 0, 0) nth($openButton, $i));
 	}
     }
+    &:checked~.menu-item {
+	@include setPrefix(transition-timing-function, cubic-bezier(0.935, 0, 0.34, 1.33));
+    }
 
-    //スマホ対応
+    @include makeMenuPosition($laptopX, $laptopY);
+
+    @media screen and (max-width: 500px) {
+    	@include makeMenuPosition($spVX, $spVY);
+    }
+    @media screen and (max-width: 320px) { /* iPhone 5 */
+	@include makeMenuPosition($iPhone5VX, $iPhone5VY);
+    }
+    @media screen and (max-height: 414px) {
+	@include makeMenuPosition($spHX, $spHY);
+    }	
 }

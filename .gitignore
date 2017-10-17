@@ -1,6 +1,13 @@
-<<<<<<< HEAD
-tsconfig.json
-=======
->>>>>>> master
-.DS_Store
+devtools
 node_modules
+package-lock.json
+package.json
+README.md
+src
+tsconfig.json
+tsconfig.yaml
+tslint.json
+webpack-release.config.js
+webpack.config.js
+favicon.ico
+*.js.map
