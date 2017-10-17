@@ -1,6 +1,8 @@
 node_modules
 dist
 tsconfig.json
+oss_contribution.json
+tool_tips.json
 .DS_Store
 bundle.js
 bundle.js.map

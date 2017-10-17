@@ -9,31 +9,6 @@ import MdAccountCircle from 'react-icons/lib/md/account-circle';
 import TiContacts from 'react-icons/lib/ti/contacts';
 import TiDeleteOutline from 'react-icons/lib/ti/delete-outline';
 
-interface RokiIconProps {
-    width: number;
-    height: number;
-    menuStatus: boolean;
-}
-
-interface RokiIconState {
-    isOpen?: boolean;
-    isInited?: boolean;
-    page?: string;
-}
-
-interface MenuElement {
-    uri: string;
-    icon: JSX.Element;
-    event: () => void;
-}
-
-interface PageStatus {
-    links: string;
-    about: string;
-    contact: string;
-    default: string;
-}
-
 export default class RokiIcon extends React.Component<RokiIconProps, RokiIconState> {
     constructor(props: RokiIconProps) {
         super(props);

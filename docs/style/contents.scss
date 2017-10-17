@@ -1,8 +1,6 @@
 @import './mixin/generics';
 @import  './clearfix';
 
-// TODO: 700px ~ 420px and other size
-
 #contentsWrapper {
     width: 700px;
     height: 700px;
@@ -14,7 +12,7 @@
     right: 0;
 }
 
-@media screen and (max-height: 420px) {
+@media screen and (max-height: 699px) {
     #contentsWrapper {
 	width: 100%;
 	height: 100%;
@@ -22,7 +20,7 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 699px) {
     #contentsWrapper {
 	width: 100%;
 	height: 100%;
@@ -68,6 +66,10 @@
 }
 
 .Cross {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
     cursor: pointer;
 }
 
@@ -84,11 +86,12 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+	z-index: 5;
 	cursor: pointer;
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 780px) {
     #AboutRoki {
 	width: 130px;
 	height: 130px;
@@ -202,15 +205,12 @@
     border-radius: 6px;
 }
 
-#ossText {
-}
-
 #tablePositioner {
     position: absolute;
     bottom: 0;
 }
 
-@media screen and (max-height: 420px) {
+@media screen and (max-height: 699px) {
     #tablePositioner {
 	position: static;
 	margin-top: 10px;
@@ -226,5 +226,70 @@
 	margin-top: 10px;
 	box-sizing: border-box;
 	padding: 10px;
+    }
+}
+
+#Contact {
+    section {
+    	width: 100%;
+	height: 128px;
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+	font-size: 2em;
+    }
+    ul {
+	height: 100%;
+	box-sizing: border-box;
+    }
+}
+
+#Links {
+    @extend #Contact;
+    box-sizing: border-box;
+    margin-left: 5px;
+    margin-right: 10px;
+    section {
+	height: 295px;
+	font-size: 1.5em;
+	box-sizing: border-box;
+	max-width: 700px;
+    }
+    li {
+	margin: 0 5px 0 5px;
+	display: inline-block;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-color: black;
+	border: #8c8c8c solid 1px;
+	position: relative;
+
+	&:hover {
+	    background-color: #0a0a0a;
+	    @include setPrefix(transition, 0.3s ease-in-out);
+	}
+    }
+
+    a {
+	padding: 10px;
+	display: block;
+    }
+}
+
+@media screen and (max-width: 453px) {
+    #Links {
+	section {
+	    position: static;
+	    margin-top: 20px;
+	}
+    }
+}
+
+@media screen and (max-height: 415px) {
+    #Links {
+	section {
+	    position: static;
+	    margin-top: 20px;
+	}
     }
 }

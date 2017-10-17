@@ -4,11 +4,6 @@ import Links from './contents/Links';
 import About from './contents/About';
 import Contact from './contents/Contact';
 
-interface InPageContentsProps {
-    contents: string | undefined;
-    contentsName: PageStatus;
-}
-
 export default class InPageContents extends React.Component<InPageContentsProps, {}> {
     constructor(props: InPageContentsProps) {
         super(props);

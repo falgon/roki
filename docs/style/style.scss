@@ -39,6 +39,12 @@ body {
     font-size: 62.5%;
 }
 
+@media screen and (max-height: 298px) {
+    body {
+	overflow: scroll;
+    }
+}
+
 #content {
     width: 100%;
     height: 100%;

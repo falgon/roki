@@ -24,7 +24,7 @@ export default class Contact extends React.Component<{}, {}> {
             <div id='Contact'>
                 <h2 className='typeString'>Contact</h2>
                 <section>
-                        <ul style={{ listStyle: 'none', textAlign: 'left', marginLeft: '15px' }}>
+                        <ul style={{ listStyle: 'none', textAlign: 'center', marginLeft: '15px' }}>
                             {
                                 ele.map((e: Pair) => {
                                     return <li style={ListStyle}>{e.icon}{e.text}</li>;

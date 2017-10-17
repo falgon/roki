@@ -8,14 +8,9 @@ import GoTag from 'react-icons/lib/go/tag';
 import GoStar from 'react-icons/lib/go/star';
 import Roki from '../../../assets/roki.png';
 import TiCalender from 'react-icons/lib/ti/calender';
-
-interface OSS {
-    text: string;
-    link: string;
-    genre: string;
-    date: string;
-}
-
+import * as ossList from '../../../docs/oss_contribution.json';
+import * as toolTips from '../../../docs/tool_tips.json';
+    
 export default class About extends React.Component<{}, {}> {
     constructor(props: {}) {
         super(props);
@@ -24,11 +19,6 @@ export default class About extends React.Component<{}, {}> {
     public render(): JSX.Element {
         const IconsStyle = { marginRight: '6px', fontSize: '2em' };
         const ListStyle = { marginBottom: '8px' };
-
-        const toolTips: string[] = [
-            'C++', 'Scala', 'Rust', 'Haskell', 'Lisp Scheme', 'Typescript',
-            'GNU/Linux', 'Vim', 'Data compression', 'Quantum mechanics'
-        ];
 
         const ele: Pair[] = [
             { text: 'Born in 1995', icon: <FaBirthdayCake style={IconsStyle} /> },
@@ -49,52 +39,7 @@ export default class About extends React.Component<{}, {}> {
             },
         ];
 
-        const ossList: OSS[] = [
-            {
-                text: 'cpprefjp: Fix typo #388',
-                link: 'https://github.com/cpprefjp/site/pull/388/commits/5652d53580b10e357f1093b907b90021dc04ebc1',
-                genre: 'C++',
-                date: '2017/01/09'
-            },
-            {
-                text: 'cppreference: Fix typo',
-                link: 'http://en.cppreference.com/mwiki/index.php?title=cpp/language/class_template_argument_deduction&diff=prev&oldid=92071',
-                genre: 'C++',
-                date: '2017/04/04'
-            },
-            {
-                text: 'cpprefjp: Fix typo 8c9490',
-                link: 'https://github.com/cpprefjp/site/commit/8c09490285f735480bfacec2037fa7d94742b370',
-                genre: 'C++',
-                date: '2017/07/06'
-            },
-            {
-                text: 'MDN web docs Revision 1279273 of parseInt()',
-                link: 'https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/parseInt$revision/1279273',
-                genre: 'javascript',
-                date: '2017/07/29'
-            },
-            {
-                text: 'P0052 unique_resource implementation: Fix assert typo',
-                link: 'https://github.com/PeterSommerlad/SC22WG21_Papers/pull/4',
-                genre: 'C++',
-                date: '2017/08/16'
-            },
-            {
-                text: 'cpprefjp: Fix typo 336fa5e',
-                link: 'https://github.com/cpprefjp/site/commit/6bb217759bd852629c2e24cd8285bf8925719ad4',
-                genre: 'C++',
-                date: '2017/08/26'
-            },
-            {
-                text: 'Boost C++ libraries predef: fix typo s/BOOST_ARCH_PARISK/BOOST_ARCH_PARISC',
-                link: 'https://github.com/boostorg/predef/pull/63',
-                genre: 'C++',
-                date: '2017/10/11'
-            },
-        ];
         let indexer: number = 0;
-
         return (
             <div id='About'>
                 <h2 className='typeString' style={{ marginBottom: '15px'}}>About</h2>
