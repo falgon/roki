@@ -1,0 +1,39 @@
+.oswald {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #c8c8c8;
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+script {
+    display: none;
+}
+
+.br::before {
+    content: '\A';
+    white-space: pre;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #272B30;
+    color: #c8c8c8;
+    overflow: hidden;
+    font-size: 62.5%;
+}
