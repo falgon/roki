@@ -171,7 +171,8 @@
 }
 
 #tableWrapper {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -182,6 +183,12 @@
     background: black;
 }
 
+@media screen and (max-width: 420px) {
+    #tableWrapper {
+        overflow: scroll;
+    }
+}
+
 #ossContrib {
     overflow: scroll;
     text-align: left;
@@ -189,7 +196,7 @@
 
     tr,
     td {
-        overflow: scroll;
+        overflow: visible;
         border-bottom: solid 1px silver;
         border-collapse: collapse;
         padding: 0.8em;
