@@ -42,6 +42,7 @@ interface RokiIconState {
 interface MenuElement {
     uri: string;
     icon: JSX.Element;
+    ref: string;
     event: () => void;
 }
 

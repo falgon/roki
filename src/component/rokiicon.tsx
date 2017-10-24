@@ -45,7 +45,7 @@ export default class RokiIcon extends React.Component<RokiIconProps, RokiIconSta
                                     {elm.icon}
                                 </div>
                                 :
-                                <a href={elm.uri} className={['menu-item', 'item-' + index.toString(), isOpen ? 'menu-Opend' : 'menu-NotOpen'].join(' ')}>
+                                <a href={elm.uri} className={['menu-item', elm.ref, 'item-' + index.toString(), isOpen ? 'menu-Opend' : 'menu-NotOpen'].join(' ')}>
                                     {elm.icon}
                                 </a>;
                         })
@@ -63,12 +63,12 @@ export default class RokiIcon extends React.Component<RokiIconProps, RokiIconSta
     }
 
     private menuElement: MenuElement[] = [
-        { uri: 'https://twitter.com/530506', icon: <TiSocialTwitter />, event: () => { } },
-        { uri: 'https://github.com/falgon', icon: <GoMarkGithub />, event: () => { } },
-        { uri: '', icon: <GoLink />, event: () => { this.setState({ page: this.pageStatus.links }) } },
-        { uri: '', icon: <MdAccountCircle />, event: () => { this.setState({ page: this.pageStatus.about }) } },
-        { uri: '', icon: <TiContacts />, event: () => { this.setState({ page: this.pageStatus.contact }) } },
-        { uri: 'http://roki.hateblo.jp/', icon: <GoPencil />, event: () => { } }
+        { uri: 'https://twitter.com/530506', icon: <TiSocialTwitter />, ref: 'ElTwitter', event: () => { } },
+        { uri: 'https://github.com/falgon', icon: <GoMarkGithub />, ref: 'ElGithub', event: () => { } },
+        { uri: '', icon: <GoLink />, ref: 'ElLinks', event: () => { this.setState({ page: this.pageStatus.links }) } },
+        { uri: '', icon: <MdAccountCircle />, ref: 'ElAbout', event: () => { this.setState({ page: this.pageStatus.about }) } },
+        { uri: '', icon: <TiContacts />, ref: 'ElContact', event: () => { this.setState({ page: this.pageStatus.contact }) } },
+        { uri: 'http://roki.hateblo.jp/', icon: <GoPencil />, ref: 'ElBlog', event: () => { } }
     ];
 
     private pageStatus: PageStatus = {
