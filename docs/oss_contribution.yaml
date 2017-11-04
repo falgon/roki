@@ -19,7 +19,7 @@
   date:  "2017/07/29"
 
 - text: "P0052 unique_resource implementation: Fix assert typo"     
-  link:  "ttps://github.com/PeterSommerlad/SC22WG21_Papers/pull/4"
+  link:  "https://github.com/PeterSommerlad/SC22WG21_Papers/pull/4"
   genre: "C++"
   date:  "2017/08/16"
 
