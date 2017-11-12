@@ -32,3 +32,8 @@
   link:  "https://github.com/boostorg/predef/pull/63"
   genre: "C++"
   date:  "2017/10/11"
+
+- text: "P0051 C++ generic overload function implementation: removed extra comma"
+  link: "https://github.com/viboes/std-make/pull/33"
+  genre: "C++"
+  date: "2017/11/13"
