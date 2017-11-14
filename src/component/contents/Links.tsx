@@ -12,6 +12,7 @@ import FaAmazon from 'react-icons/lib/fa/amazon';
 import FaStackOverflow from 'react-icons/lib/fa/stack-overflow';
 import FaTumblr from 'react-icons/lib/fa/tumblr';
 import TiSocialSkype from 'react-icons/lib/ti/social-skype';
+import GoPencil from 'react-icons/lib/go/pencil';
 
 export default class Contact extends React.Component<{}, {}> {
     constructor(props: {}) {
@@ -37,8 +38,14 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='https://www.facebook.com/roki53'>
-                    <TiSocialFacebook style={IconsStyle} />facebook
+                <a className='IconsStyle' href='http://roki.hateblo.jp/'>
+                    <GoPencil style={IconsStyle} />Blog
+		</a>
+            },
+            {
+                text:
+                <a className='IconsStyle' href='http://rok1.hateblo.jp/'>
+                    <GoPencil style={IconsStyle} />Second Blog
 		</a>
             },
             {
@@ -49,75 +56,81 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
+                <a className='IconsStyle' href='https://www.facebook.com/roki53'>
+                    <TiSocialFacebook style={IconsStyle} />facebook
+		</a>
+            },
+            {
+                text:
                 <a className='IconsStyle' href='0x35.tumblr.com'>
                     <FaTumblr style={IconsStyle} />tumblr
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://www.instagram.com/rr0ki'>
                     <FaInstagram style={IconsStyle} />Instagram
-		</a>
+		     </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='http://steamcommunity.com/id/0x35'>
                     <FaSteamSquare style={IconsStyle} />Steam
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://soundcloud.com/falgon'>
                     <FaSoundcloud style={IconsStyle} />SoundCloud
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://jp.pinterest.com/0x35/'>
                     <FaPinterest style={IconsStyle} />Pinterest
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://www.youtube.com/user/53falgon53/'>
                     <FaYoutube style={IconsStyle} />YouTube
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='http://amzn.asia/e8TP5A2'>
                     <FaAmazon style={IconsStyle} />Amazon Wish List
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://stackoverflow.com/users/8345717/roki'>
                     <FaStackOverflow style={IconsStyle} />Stackoverflow
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='callto://cpp_0x35'>
                     <TiSocialSkype style={IconsStyle} />Skype
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://www.gitbook.com/@roki'>
                     GitBook
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://teratail.com/users/kjfkhfhgx'>
                     teratail
-		</a>
+		    </a>
             },
             {
                 text:
                 <a className='IconsStyle' href='https://yukicoder.me/users/3223'>
                     yukicoder
-		</a>
+		    </a>
             }
         ];
 
