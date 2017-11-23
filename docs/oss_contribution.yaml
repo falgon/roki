@@ -37,3 +37,8 @@
   link: "https://github.com/viboes/std-make/pull/33"
   genre: "C++"
   date: "2017/11/13"
+
+- text: "p0053r6 - C++ Synchronized Buffered Ostream: fixed to return *this in __basic_syncbuf::operator= and changed the va..."
+  link: "https://github.com/PeterSommerlad/SC22WG21_Papers/pull/5"
+  genre: "C++"
+  date: "2017/11/23"
