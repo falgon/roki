@@ -38,7 +38,7 @@
   genre: "C++"
   date: "2017/11/13"
 
-- text: "fixed to return *this in __basic_syncbuf::operator= and changed the variable name so that the declaration of 'syncbuf' does not shadow a global declaration(line: 324)."
+- text: "P0053 fixed to return *this in __basic_syncbuf::operator= and changed the variable name so that the declaration of 'syncbuf' does not shadow a global declaration(line: 324)."
   link: "https://github.com/PeterSommerlad/SC22WG21_Papers/pull/5"
   genre: "C++"
   date: "2017/11/23"
