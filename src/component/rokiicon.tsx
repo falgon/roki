@@ -68,7 +68,7 @@ export default class RokiIcon extends React.Component<RokiIconProps, RokiIconSta
         { uri: '', icon: <GoLink />, ref: 'ElLinks', event: () => { this.setState({ page: this.pageStatus.links }) } },
         { uri: '', icon: <MdAccountCircle />, ref: 'ElAbout', event: () => { this.setState({ page: this.pageStatus.about }) } },
         { uri: '', icon: <TiContacts />, ref: 'ElContact', event: () => { this.setState({ page: this.pageStatus.contact }) } },
-        { uri: 'http://roki.hateblo.jp/', icon: <GoPencil />, ref: 'ElBlog', event: () => { } }
+        { uri: 'https://falgon.github.io/roki.log/', icon: <GoPencil />, ref: 'ElBlog', event: () => { } }
     ];
 
     private pageStatus: PageStatus = {

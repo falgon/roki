@@ -38,8 +38,14 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='http://roki.hateblo.jp/'>
+                <a className='IconsStyle' href='https://falgon.github.io/roki.log/'>
                     <GoPencil style={IconsStyle} />Blog
+                </a>
+            },
+            {
+                text:
+                <a className='IconsStyle' href='http://roki.hateblo.jp/'>
+                    <GoPencil style={IconsStyle} />Old Blog (旧ブログ)
 		</a>
             },
             {
