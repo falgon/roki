@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/object-assign": "^4.0.30",
     "@types/react-icons": "2.2.3",
-    "@types/react-tap-event-plugin": "0.0.30",
+    "@types/react-tap-event-plugin": "^0.0.30",
     "@types/react-transition-group": "^2.0.6",
     "@types/reactstrap": "^4.6.4",
     "awesome-typescript-loader": "^3.2.3",
