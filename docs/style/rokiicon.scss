@@ -91,7 +91,7 @@
 }
 
 #ro {
-    background-visibility: none;
+    backface-visibility: none;
     @include setPrefix(animation,
     Ro 2s ease 0s 1 normal);
     display: flex;
