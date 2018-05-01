@@ -91,9 +91,8 @@
 }
 
 #ro {
-    background-visibility: none;
-    @include setPrefix(animation,
-    Ro 2s ease 0s 1 normal);
+    backface-visibility: hidden;
+    @include setPrefix(animation, Ro 2s ease 0s 1 normal);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,4 +164,15 @@
 }
 
 .ElBlog {
+}
+
+.RoView {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 180px;
+    left: 0;
+    margin: auto;
+    width: 80px;
 }

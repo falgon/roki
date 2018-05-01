@@ -1,5 +1,6 @@
 ---
 compilerOptions:
+  moduleResolution: "node"
   experimentalDecorators: true 
   module: es2015 # For webpack Uglify plugin (See also: https://github.com/webpack/webpack/issues/2972) 
   target: es5 # Ditto 

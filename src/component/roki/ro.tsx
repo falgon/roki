@@ -17,7 +17,7 @@ export default class Ro extends React.Component<{}, {}> {
 
     public render() {
         return (
-            <div style={{ zIndenx: 0, position: 'absolute', top: 0, bottom: 0, right: '180px', left: 0, margin: 'auto', width: '80px' }} id='ro'><h1>Ro</h1></div>
+            <div className='RoView' id='ro'><h1>Ro</h1></div>
         );
     }
 
