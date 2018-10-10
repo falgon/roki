@@ -1,16 +1,12 @@
 import * as React from 'react';
 import Wrapper from '../wrapper';
-import FaBirthdayCake from 'react-icons/lib/fa/birthday-cake';
-import FaMale from 'react-icons/lib/fa/male';
-import GoInfo from 'react-icons/lib/go/info';
-import GoLocation from 'react-icons/lib/go/location';
-import GoTag from 'react-icons/lib/go/tag';
-import GoStar from 'react-icons/lib/go/star';
+import { FaBirthdayCake, FaMale } from 'react-icons/fa';
+import { GoInfo, GoLocation, GoTag, GoStar } from 'react-icons/go';
+import { TiCalendar } from 'react-icons/ti';
 import Roki from '../../../assets/roki.png';
-import TiCalender from 'react-icons/lib/ti/calender';
 import * as ossList from '../../../docs/oss_contribution.json';
 import * as toolTips from '../../../docs/tool_tips.json';
-    
+  
 export default class About extends React.Component<{}, {}> {
     constructor(props: {}) {
         super(props);
@@ -60,7 +56,7 @@ export default class About extends React.Component<{}, {}> {
                         <h2 className='typeString' style={{ marginBottom: '15px', fontSize: '3em' }}>OSS Contribution</h2>
                         <div id='tableWrapper'>
                             <table id='ossContrib'>
-                                <tr><th>#</th><th>Description</th><th>Genre</th><th><TiCalender style={{ fontSize: '1.5em' }} /> Date</th></tr>
+                                <tr><th>#</th><th>Description</th><th>Genre</th><th><TiCalendar style={{ fontSize: '1.5em' }} /> Date</th></tr>
                                 {
                                     ossList.map((o: OSS) => {
                                         ++indexer;

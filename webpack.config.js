@@ -1,13 +1,17 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.tsx',
+    target: 'node',
     output: {
         filename: 'bundle.js',
         path: __dirname + '/docs/js/'
     },
     devtool: 'source-map',
     resolve: {
+        modules: [path.resolve(__dirname, "src"), "node_modules"],
         extensions: ['.ts', '.tsx', '.js', '.json']
     },
     plugins: [
@@ -20,6 +24,12 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.json$/,
+                loader: 'json-loader',
+                type: 'javascript/auto',
+                exclude: ['/node_modules/']
+            },
             {
                 test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader',
@@ -58,11 +68,6 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: 'raw-loader',
-                exclude: ['/node_modules/']
-            },
-            {
-                test: /\.json$/,
-                use: 'json-loader',
                 exclude: ['/node_modules/']
             },
             {
@@ -138,4 +143,8 @@ module.exports = {
             //    { enforce: 'pre', test: /\.tsx?$/, exclude: /node_modules/, loader:'tslint-loader' } // FIXME: https://github.com/wbuchwalter/tslint-loader/issues/57
         ],
     },
+    node: {
+        console: true,
+        net: 'empty'
+    }
 };

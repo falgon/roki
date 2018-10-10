@@ -1,13 +1,9 @@
 import * as React from 'react';
 import InPageContents from './pageContents';
 import Roki from '../../assets/roki.png';
-import TiSocialTwitter from 'react-icons/lib/ti/social-twitter';
-import GoMarkGithub from 'react-icons/lib/go/mark-github';
-import GoPencil from 'react-icons/lib/go/pencil';
-import GoLink from 'react-icons/lib/go/link';
-import MdAccountCircle from 'react-icons/lib/md/account-circle';
-import TiContacts from 'react-icons/lib/ti/contacts';
-import TiDeleteOutline from 'react-icons/lib/ti/delete-outline';
+import { TiSocialTwitter, TiContacts, TiDeleteOutline } from 'react-icons/ti';
+import { GoMarkGithub, GoPencil, GoLink } from 'react-icons/go';
+import { MdAccountCircle } from 'react-icons/md';
 
 export default class RokiIcon extends React.Component<RokiIconProps, RokiIconState> {
     constructor(props: RokiIconProps) {
