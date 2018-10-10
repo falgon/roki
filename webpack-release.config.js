@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
+    mode: 'production',
     entry: './src/index.tsx',
     output: {
         filename: 'bundle.js',
@@ -18,12 +19,7 @@ module.exports = {
             Popper: ['popper.js', 'default']
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ],
     module: {
@@ -35,17 +31,20 @@ module.exports = {
             {
                 test: /\.scss?$/,
                 include: __dirname + '/docs/style/',
-                loaders: ['style-loader', 'css-loader', 'sass-loader']
+                loaders: ['style-loader', 'css-loader', 'sass-loader'],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.css?$/,
                 include: /node_modules/,
-                loaders: ['style-loader', 'css-loader']
+                loaders: ['style-loader', 'css-loader'],
+                exclude: ['/node_modules/']
             },
             {
                 enforce: 'pre',
                 test: /\.js$/,
-                loader: 'source-map-loader'
+                loader: 'source-map-loader',
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.jpe?g$|\.ico$/,
@@ -56,15 +55,19 @@ module.exports = {
                         publicPath: __dirname + '/assets',
                         emitFile: true
                     }
-                }]
+                }],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.html$/,
-                use: 'raw-loader'
+                use: 'raw-loader',
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.json$/,
-                use: 'json-loader'
+                use: 'json-loader',
+                type: 'javascript/auto',
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.woff(\?.+)?$/,
@@ -75,7 +78,8 @@ module.exports = {
                         publicPath: __dirname + '/assets',
                         emitFile: true
                     }
-                }]
+                }],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.woff2(\?.+)?$/,
@@ -86,7 +90,8 @@ module.exports = {
                         publicPath: __dirname + '/assets',
                         emitFile: true
                     }
-                }]
+                }],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.ttf(\?.+)?$/,
@@ -97,7 +102,8 @@ module.exports = {
                         publicPath: __dirname + '/assets',
                         emitFile: true
                     }
-                }]
+                }],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.eot(\?.+)?$/,
@@ -108,7 +114,8 @@ module.exports = {
                         publicPath: __dirname + '/assets',
                         emitFile: true
                     }
-                }]
+                }],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.svg(\?.+)?$/,
@@ -119,20 +126,21 @@ module.exports = {
                         publicPath: __dirname + '/assets',
                         emitFile: true
                     }
-                }]
+                }],
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.png$/,
-                use: 'url-loader?mimetype=image/png&name=[path][name].[ext]'
+                use: 'url-loader?mimetype=image/png&name=[path][name].[ext]',
+                exclude: ['/node_modules/']
             },
             {
                 test: /\.gif$/,
-                use: 'url-loader?mimetype=image/gif&name=[path][name].[ext]'
+                use: 'url-loader?mimetype=image/gif&name=[path][name].[ext]',
+                exclude: ['/node_modules/']
             }
             //    { enforce: 'pre', test: /\.tsx?$/, exclude: /node_modules/, loader:'tslint-loader' } // FIXME: https://github.com/wbuchwalter/tslint-loader/issues/57
         ],
-        loaders: [{
-            exclude: '/node_modules/'
-        }, ],
     },
+    performance: { hints: false }
 };
