@@ -20,8 +20,8 @@ branches:
         - gh-pages
 
 test_script:
-    - npm build
-    - npm build_rl
+    - npm run build
+    - npm run build_rl
 
 build: off
 deploy: off
