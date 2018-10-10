@@ -1,18 +1,22 @@
 import * as React from 'react';
-import TiSocialFacebook from 'react-icons/lib/ti/social-facebook';
-import TiSocialGithub from 'react-icons/lib/ti/social-github';
-import TiSocialTwitter from 'react-icons/lib/ti/social-twitter';
-import FaSlideshare from 'react-icons/lib/fa/slideshare';
-import FaInstagram from 'react-icons/lib/fa/instagram';
-import FaSteamSquare from 'react-icons/lib/fa/steam-square';
-import FaSoundcloud from 'react-icons/lib/fa/soundcloud';
-import FaPinterest from 'react-icons/lib/fa/pinterest';
-import FaYoutube from 'react-icons/lib/fa/youtube';
-import FaAmazon from 'react-icons/lib/fa/amazon';
-import FaStackOverflow from 'react-icons/lib/fa/stack-overflow';
-import FaTumblr from 'react-icons/lib/fa/tumblr';
-import TiSocialSkype from 'react-icons/lib/ti/social-skype';
-import GoPencil from 'react-icons/lib/go/pencil';
+import { 
+    TiSocialFacebook, 
+    TiSocialGithub,
+    TiSocialTwitter,
+    TiSocialSkype
+} from 'react-icons/ti';
+import { 
+    FaAmazon, 
+    FaYoutube, 
+    FaPinterest, 
+    FaSoundcloud, 
+    FaSteamSquare, 
+    FaInstagram, 
+    FaSlideshare, 
+    FaStackOverflow, 
+    FaTumblr 
+} from 'react-icons/fa';
+import { GoPencil } from 'react-icons/go';
 
 export default class Contact extends React.Component<{}, {}> {
     constructor(props: {}) {

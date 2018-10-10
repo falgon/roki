@@ -1,6 +1,7 @@
 import * as React from 'react';
-import GoMail from 'react-icons/lib/go/mail';
-import TiSocialSkype from 'react-icons/lib/ti/social-skype';
+import { GoMail } from 'react-icons/go';
+import { TiSocialSkype } from 'react-icons/ti';
+
 export default class Contact extends React.Component<{}, {}> {
     constructor(props: {}) {
         super(props);
