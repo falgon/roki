@@ -1,0 +1,27 @@
+install:
+    - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version)
+    - node --version
+    - npm install -g node-gyp
+    - npm install --build-from-source --msvs_version=2013
+    - npm i
+      
+environment:
+    matrix:
+        - nodejs_version: 10.11
+
+init:
+    - git config --global core.autocrlf false
+
+branches:
+    only:
+        - master
+        - develop
+    except:
+        - gh-pages
+
+test_script:
+    - npm build
+    - npm build_rl
+
+build: off
+deploy: off
