@@ -6,12 +6,14 @@ sudo: false
 branches:
     only:
         - master
+        - develop
 os:
     - linux
     - osx
 
 install:
     - npm i
+    - svn export https://github.com/falgon/roki/branches/gh-pages/assets
 script: 
     - npm run build
     - npm run build_rl
