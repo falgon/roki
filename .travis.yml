@@ -2,7 +2,9 @@ language: node_js
 node_js:
         - "stable"
 sudo: false
-    
+cache:
+    - "node_modules"
+
 branches:
     only:
         - master
@@ -14,11 +16,13 @@ os:
 
 install:
     - npm i
+
 jobs:
-    - stage: Common build
-      script: npm run build
-    - stage: Product build
-      script: npm run build_rl
+    include:
+        - stage: Common build
+          script: npm run build
+        - stage: Product build
+          script: npm run build_rl
 
 notifications:
     email: false
