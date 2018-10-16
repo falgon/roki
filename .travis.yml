@@ -17,13 +17,9 @@ os:
 install:
     - npm i
 
-script: echo "npm test temporarily disabled"
-jobs:
-    include:
-        - stage: Common build
-          script: npm run build
-        - stage: Product build
-          script: npm run build_rl
+script:
+    - npm run build
+    - npm run build_rl
 
 notifications:
     email: false
