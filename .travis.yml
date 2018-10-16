@@ -14,7 +14,11 @@ os:
 
 install:
     - npm i
-    - svn export https://github.com/falgon/roki/branches/gh-pages/assets
-script: 
-    - npm run build
-    - npm run build_rl
+jobs:
+    - stage: Common build
+      script: npm run build
+    - stage: Product build
+      script: npm run build_rl
+
+notifications:
+    email: false

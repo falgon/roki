@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -19,11 +20,51 @@ module.exports = {
             Popper: ['popper.js', 'default']
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            'process.env.NODE_ENV': JSON.stringify('production')
         })
     ],
+	optimization: {
+    	minimizer: [
+      		new UglifyJSPlugin({
+        		sourceMap: true,
+        		uglifyOptions: {
+          			compress: {
+            			inline: false
+          			}
+        		}
+      		})
+    	],
+    	runtimeChunk: false,
+    	splitChunks: {
+      		cacheGroups: {
+        		default: false,
+        		commons: {
+          			test: /[\\/]node_modules[\\/]/,
+          			name: 'vendor',
+          			chunks: 'all',
+          			minChunks: 2
+        		}
+      		}
+    	}
+  	},
+	stats: {
+    	colors: true,
+    	hash: true,
+    	timings: true,
+    	assets: true,
+    	chunks: true,
+    	chunkModules: true,
+    	modules: true,
+    	children: true,
+  	},
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.(jpg|png|gif|svg)$/,
+                loader: 'image-webpack-loader',
+                enforce: 'pre'
+            },
+            {
                 test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader',
                 exclude: ['/node_modules/', '/assets/']
