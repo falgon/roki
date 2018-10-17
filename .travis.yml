@@ -2,7 +2,9 @@ language: node_js
 node_js:
         - "stable"
 sudo: false
-    
+cache:
+    - "node_modules"
+
 branches:
     only:
         - master
@@ -14,7 +16,10 @@ os:
 
 install:
     - npm i
-    - svn export https://github.com/falgon/roki/branches/gh-pages/assets
-script: 
+
+script:
     - npm run build
     - npm run build_rl
+
+notifications:
+    email: false
