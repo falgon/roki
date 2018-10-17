@@ -5,21 +5,23 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "if [ ! -d assets ]; then svn export --force https://github.com/falgon/roki/branches/gh-pages/assets; fi && npm run make_conf && webpack --config ./webpack.config.js",
+    "get_assets": "./devtools/get_assets.rb",
+    "build": "npm run get_assets && npm run make_conf && webpack --config ./webpack.config.js",
     "watch": "npm run make_conf && webpack --watch",
-    "build_rl": "if [ ! -d assets ]; then svn export --force https://github.com/falgon/roki/branches/gh-pages/assets; fi && npm run make_conf && webpack --config ./webpack-release.config.js",
-    "make_conf": "./devtools/yml2json.rb ./tsconfig.yaml > ./tsconfig.json && ./devtools/yml2json.rb ./docs/oss_contribution.yaml > ./docs/oss_contribution.json && ./devtools/yml2json.rb ./docs/tool_tips.yaml > ./docs/tool_tips.json"
+    "build_rl": "npm run get_assets && npm run make_conf && webpack --config ./webpack-release.config.js",
+    "make_conf": "./devtools/yml2json.rb ./tsconfig.yaml > ./tsconfig.json && ./devtools/yml2json.rb ./docs/oss_contribution.yaml > ./docs/oss_contribution.json && ./devtools/yml2json.rb ./docs/tool_tips.yaml > ./docs/tool_tips.json",
+    "webpack_analyze": "npm run get_assets && npm run make_conf && webpack --config ./webpack-analyze.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/falgon/rokigp.git"
+    "url": "git+https://github.com/falgon/roki.git"
   },
   "author": "roki <falgon53@yahoo.co.jp>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/falgon/rokigp/issues"
+    "url": "https://github.com/falgon/roki/issues"
   },
-  "homepage": "https://falgon.github.io/rokigp",
+  "homepage": "https://falgon.github.io/roki",
   "devDependencies": {
     "@types/object-assign": "^4.0.30",
     "@types/react-icons": "2.2.6",
@@ -29,6 +31,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
+    "image-webpack-loader": "^4.4.0",
     "json-loader": "^0.5.7",
     "node-sass": "^4.9.3",
     "object-assign": "^4.1.1",
@@ -46,11 +49,12 @@
     "typescript": "^3.1.2",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.2",
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "@types/jquery": "^3.2.13",
-    "@types/react": "^16.0.10",
+    "@types/jquery": "^3.3.19",
+    "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.1",
     "jquery": "^3.2.1",
     "react": "^16.0.0",

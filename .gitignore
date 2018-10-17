@@ -4,8 +4,8 @@ tsconfig.json
 oss_contribution.json
 tool_tips.json
 .DS_Store
-bundle.js
-bundle.js.map
+*bundle.js
+*bundle.js.map
 react-dom.production.min.js
 react.production.min.js
 assets
