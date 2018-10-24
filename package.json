@@ -36,7 +36,7 @@
     "node-sass": "^4.9.3",
     "object-assign": "^4.1.1",
     "raw-loader": "^0.5.1",
-    "react-icons": "3.2.1",
+    "react-icons": "3.2.2",
     "react-radial-menu": "^0.1.0",
     "react-tap-event-plugin": "^3.0.2",
     "react-transition-group": "^2.2.1",
