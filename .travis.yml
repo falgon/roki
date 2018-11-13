@@ -4,7 +4,12 @@ node_js:
 sudo: false
 cache:
     - "node_modules"
+    - apt
 
+addons:
+    apt:
+        packages:
+            - nasm
 branches:
     only:
         - master
