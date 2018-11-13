@@ -5,6 +5,10 @@ sudo: false
 cache:
     - "node_modules"
 
+addons:
+    apt:
+        packages:
+            - nasm
 branches:
     only:
         - master
