@@ -41,7 +41,7 @@
     "react-radial-menu": "^0.1.0",
     "react-tap-event-plugin": "^3.0.2",
     "react-transition-group": "^2.2.1",
-    "reactstrap": "^6.5.0",
+    "reactstrap": "^7.0.0",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.2",
     "style-loader": "^0.23.1",
