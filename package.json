@@ -28,7 +28,7 @@
     "@types/react-icons": "2.2.6",
     "@types/react-tap-event-plugin": "^0.0.30",
     "@types/react-transition-group": "^2.0.6",
-    "@types/reactstrap": "^6.4.0",
+    "@types/reactstrap": "^7.1.2",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^2.0.0",
     "file-loader": "^3.0.1",
