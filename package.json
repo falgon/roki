@@ -38,7 +38,7 @@
     "object-assign": "^4.1.1",
     "raw-loader": "^1.0.0",
     "react-icons": "3.4.0",
-    "react-radial-menu": "^0.1.0",
+    "react-radial-menu": "^1.0.0",
     "react-tap-event-plugin": "^3.0.2",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^7.0.0",
