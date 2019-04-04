@@ -48,13 +48,13 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='http://roki.hateblo.jp/'>
+                <a className='IconsStyle' href='https://roki.hateblo.jp/'>
                     <GoPencil style={IconsStyle} />Old Blog (旧ブログ)
 		</a>
             },
             {
                 text:
-                <a className='IconsStyle' href='http://rok1.hateblo.jp/'>
+                <a className='IconsStyle' href='https://rok1.hateblo.jp/'>
                     <GoPencil style={IconsStyle} />Second Blog
 		</a>
             },
@@ -72,7 +72,7 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='0x35.tumblr.com'>
+                <a className='IconsStyle' href='https://0x35.tumblr.com'>
                     <FaTumblr style={IconsStyle} />tumblr
 		    </a>
             },
@@ -84,7 +84,7 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='http://steamcommunity.com/id/0x35'>
+                <a className='IconsStyle' href='https://steamcommunity.com/id/r0k1'>
                     <FaSteamSquare style={IconsStyle} />Steam
 		    </a>
             },
@@ -108,7 +108,7 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='http://amzn.asia/e8TP5A2'>
+                <a className='IconsStyle' href='https://amzn.asia/e8TP5A2'>
                     <FaAmazon style={IconsStyle} />Amazon Wish List
 		    </a>
             },
