@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { 
-    TiSocialFacebook, 
     TiSocialGithub,
     TiSocialTwitter,
     TiSocialSkype
@@ -8,11 +7,7 @@ import {
 import { 
     FaAmazon, 
     FaYoutube, 
-    FaPinterest, 
-    FaSoundcloud, 
     FaSteamSquare, 
-    FaInstagram, 
-    FaSlideshare, 
     FaStackOverflow, 
     FaTumblr 
 } from 'react-icons/fa';
@@ -49,25 +44,7 @@ export default class Contact extends React.Component<{}, {}> {
             {
                 text:
                 <a className='IconsStyle' href='https://roki.hateblo.jp/'>
-                    <GoPencil style={IconsStyle} />Old Blog (旧ブログ)
-		</a>
-            },
-            {
-                text:
-                <a className='IconsStyle' href='https://rok1.hateblo.jp/'>
-                    <GoPencil style={IconsStyle} />Second Blog
-		</a>
-            },
-            {
-                text:
-                <a className='IconsStyle' href='http://www.slideshare.net/HirokiGomi'>
-                    <FaSlideshare style={IconsStyle} />Slideshare
-		</a>
-            },
-            {
-                text:
-                <a className='IconsStyle' href='https://www.facebook.com/roki53'>
-                    <TiSocialFacebook style={IconsStyle} />facebook
+                    <GoPencil style={IconsStyle} />Old Blog
 		</a>
             },
             {
@@ -78,26 +55,8 @@ export default class Contact extends React.Component<{}, {}> {
             },
             {
                 text:
-                <a className='IconsStyle' href='https://www.instagram.com/rr0ki'>
-                    <FaInstagram style={IconsStyle} />Instagram
-		     </a>
-            },
-            {
-                text:
                 <a className='IconsStyle' href='https://steamcommunity.com/id/r0k1'>
                     <FaSteamSquare style={IconsStyle} />Steam
-		    </a>
-            },
-            {
-                text:
-                <a className='IconsStyle' href='https://soundcloud.com/falgon'>
-                    <FaSoundcloud style={IconsStyle} />SoundCloud
-		    </a>
-            },
-            {
-                text:
-                <a className='IconsStyle' href='https://jp.pinterest.com/0x35/'>
-                    <FaPinterest style={IconsStyle} />Pinterest
 		    </a>
             },
             {
