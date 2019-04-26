@@ -23,7 +23,7 @@
   },
   "homepage": "https://falgon.github.io/roki",
   "devDependencies": {
-    "@types/node": "^11.11.6",
+    "@types/node": "^11.13.8",
     "@types/object-assign": "^4.0.30",
     "@types/react-tap-event-plugin": "^0.0.30",
     "@types/react-transition-group": "^2.0.16",
