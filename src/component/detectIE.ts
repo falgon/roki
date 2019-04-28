@@ -9,3 +9,11 @@ export function detectIE(): string {
 export function isIE10orOlder(): boolean {
     return detectIE() === 'IE10 or Older';
 }
+
+export function coverHeight(): number {
+    if (isIE10orOlder()) {
+        return document.documentElement.clientHeight;
+    } else {
+        return window.innerHeight;
+    }
+}
