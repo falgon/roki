@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -24,16 +24,7 @@ module.exports = {
         })
     ],
 	optimization: {
-    	minimizer: [
-      		new UglifyJSPlugin({
-        		sourceMap: true,
-        		uglifyOptions: {
-          			compress: {
-            			inline: false
-          			}
-        		}
-      		})
-    	],
+    	minimizer: [new TerserPlugin()],
     	runtimeChunk: false,
     	splitChunks: {
       		cacheGroups: {
