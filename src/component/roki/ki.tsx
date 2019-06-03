@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isIE10orOlder } from '../detectIE';
+import { coverHeight } from '../detectIE';
 
 export default class Ki extends React.Component<{}, {}> {
     constructor(props: {}) {
@@ -22,11 +22,6 @@ export default class Ki extends React.Component<{}, {}> {
     }
 
     private updateWindowDimensions() {
-        if (isIE10orOlder()) {
-            var height = document.documentElement.clientHeight;
-        } else {
-            var height = window.innerHeight;
-        }
-        this.setState({ windowHeight: height });
+        this.setState({ windowHeight: coverHeight() });
     }
 }
