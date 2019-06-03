@@ -26,6 +26,7 @@ export default class RokiIcon extends React.Component<RokiIconProps, RokiIconSta
                             style={{ zIndex: 2, width: this.props.width, height: this.props.height, position: 'absolute', margin: 'auto', top: 0, bottom: 0, right: 0, left: 0 }}
                             onClick={() => this.setState({ isOpen: !isOpen, isInited: isInited ? isInited : !isInited })}
                             className={!isInited ? '' : isOpen ? 'isOpen' : 'isClose'}
+                            id='rokiicon_container'
                         >
                             <img id='rokiicon' src={Roki} style={{ width: this.props.width, height: this.props.height }} />
                         </div>
