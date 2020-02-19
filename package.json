@@ -60,7 +60,7 @@
     "jquery": "^3.4.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.0.0",
     "terser-webpack-plugin": "^2.0.0"
   }
 }
