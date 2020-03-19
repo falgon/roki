@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "get_assets": "./devtools/get_assets.rb",
-    "build": "npm run get_assets && npm run make_conf && webpack --config ./webpack.config.js",
+    "build": "npm run get_assets && npm run make_conf && webpack-cli --config ./webpack.config.js",
     "watch": "npm run make_conf && webpack --watch",
-    "build_rl": "npm run get_assets && npm run make_conf && webpack --config ./webpack-release.config.js",
+    "build_rl": "npm run get_assets && npm run make_conf && webpack-cli --config ./webpack-release.config.js",
     "make_conf": "./devtools/yml2json.rb ./tsconfig.yaml > ./tsconfig.json && ./devtools/yml2json.rb ./docs/oss_contribution.yaml > ./docs/oss_contribution.json && ./devtools/yml2json.rb ./docs/tool_tips.yaml > ./docs/tool_tips.json",
-    "webpack_analyze": "npm run get_assets && npm run make_conf && webpack --config ./webpack-analyze.config.js"
+    "webpack_analyze": "npm run get_assets && npm run make_conf && webpack-cli --config ./webpack-analyze.config.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "@types/reactstrap": "^8.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.0.0",
+    "es-abstract": "^1.17.4",
     "file-loader": "^6.0.0",
     "image-webpack-loader": "^6.0.0",
     "json-loader": "^0.5.7",
@@ -51,7 +52,7 @@
     "url-loader": "^4.0.0",
     "webpack": "^4.40.1",
     "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@types/jquery": "^3.3.29",
