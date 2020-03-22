@@ -19,7 +19,7 @@ export default class About extends React.Component<{}, {}> {
         const ele: Pair[] = [
             { text: 'Born in 1995', icon: <FaBirthdayCake style={IconsStyle} /> },
             { text: 'Male', icon: <FaMale style={IconsStyle} /> },
-            { text: 'Univercity student', icon: <GoInfo style={IconsStyle} /> },
+            { text: 'Engineer', icon: <GoInfo style={IconsStyle} /> },
             { text: 'Tokyo, JP', icon: <GoLocation style={IconsStyle} /> },
             { text: 'Beer 🍺', icon: <GoStar style={IconsStyle} /> },
             {
